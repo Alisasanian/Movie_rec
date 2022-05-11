@@ -1,0 +1,3264 @@
+{
+  "_version": "1",
+  "project": {
+    "_id": "625dad99713ad4001c39fc87",
+    "name": "Felmo the movie recommendation bot test #1",
+    "teamID": "eMjGLbMnBN",
+    "devVersion": "625dad99f66cf8e36da35629",
+    "platform": "general",
+    "platformData": {
+      "invocationName": "template project general"
+    },
+    "members": [],
+    "linkType": "STRAIGHT",
+    "image": "",
+    "_version": 1,
+    "creatorID": 85462,
+    "prototype": {
+      "nlp": {
+        "type": "LUIS",
+        "appID": "c4216a5c-7c6d-4281-8a56-bce4519ce8f2",
+        "resourceID": "https://us-1.cognitiveservices.azure.com/"
+      },
+      "data": {},
+      "lastTrainedTime": 1650396162530,
+      "trainedModel": {
+        "intents": [
+          {
+            "key": "phi3alv",
+            "name": "Let's go Felmo",
+            "inputs": [
+              {
+                "text": "lets",
+                "slots": []
+              },
+              {
+                "text": "go felmo",
+                "slots": []
+              },
+              {
+                "text": "lets go",
+                "slots": []
+              },
+              {
+                "text": "lets go felmo",
+                "slots": []
+              }
+            ],
+            "slots": []
+          },
+          {
+            "key": "2j243adq",
+            "name": "Horror",
+            "inputs": [
+              {
+                "text": "scary movie",
+                "slots": []
+              },
+              {
+                "text": "horror movie",
+                "slots": []
+              },
+              {
+                "text": "fear",
+                "slots": []
+              },
+              {
+                "text": "scary",
+                "slots": []
+              },
+              {
+                "text": "horror",
+                "slots": []
+              }
+            ],
+            "slots": []
+          },
+          {
+            "key": "fm2k3af6",
+            "name": "Romance",
+            "inputs": [
+              {
+                "text": "rom",
+                "slots": []
+              },
+              {
+                "text": "romantic",
+                "slots": []
+              },
+              {
+                "text": "romance",
+                "slots": []
+              }
+            ],
+            "slots": []
+          },
+          {
+            "key": "x42r3acp",
+            "name": "Fantasy",
+            "inputs": [
+              {
+                "text": "fantastic",
+                "slots": []
+              },
+              {
+                "text": "mystical",
+                "slots": []
+              },
+              {
+                "text": "magical",
+                "slots": []
+              },
+              {
+                "text": "speculative",
+                "slots": []
+              },
+              {
+                "text": "fantasy",
+                "slots": []
+              }
+            ],
+            "slots": []
+          },
+          {
+            "key": "VF.YES",
+            "name": "VF.YES",
+            "inputs": [
+              {
+                "text": "yes"
+              },
+              {
+                "text": "yea"
+              },
+              {
+                "text": "ok"
+              },
+              {
+                "text": "okay"
+              },
+              {
+                "text": "yup"
+              },
+              {
+                "text": "ya"
+              },
+              {
+                "text": "sure"
+              }
+            ],
+            "slots": []
+          },
+          {
+            "key": "VF.NO",
+            "name": "VF.NO",
+            "inputs": [
+              {
+                "text": "no"
+              },
+              {
+                "text": "nope"
+              },
+              {
+                "text": "nay"
+              },
+              {
+                "text": "nah"
+              },
+              {
+                "text": "no way"
+              },
+              {
+                "text": "negative"
+              }
+            ],
+            "slots": []
+          },
+          {
+            "key": "jdfj3ac3",
+            "name": "Genre",
+            "inputs": [
+              {
+                "text": "genra",
+                "slots": []
+              },
+              {
+                "text": "genr",
+                "slots": []
+              },
+              {
+                "text": "Genre",
+                "slots": []
+              }
+            ],
+            "slots": []
+          }
+        ],
+        "slots": [
+          {
+            "key": "ih1j3a20",
+            "name": "user_name",
+            "type": {
+              "value": "VF.NAME"
+            },
+            "color": "#3A7685",
+            "inputs": []
+          },
+          {
+            "key": "wk2x3ap4",
+            "name": "duration",
+            "type": {
+              "value": "VF.NUMBER"
+            },
+            "color": "#4F9ED1",
+            "inputs": []
+          },
+          {
+            "key": "h63g3a90",
+            "name": "year",
+            "type": {
+              "value": "VF.NUMBER"
+            },
+            "color": "#4FA9B3",
+            "inputs": []
+          },
+          {
+            "key": "6w3y3aqt",
+            "name": "mood",
+            "type": {
+              "value": "Custom"
+            },
+            "color": "#A086C4",
+            "inputs": [
+              "mood,feel vibe"
+            ]
+          },
+          {
+            "key": "zm6h3awq",
+            "name": "alone",
+            "type": {
+              "value": "VF.NUMBER"
+            },
+            "color": "#A086C4",
+            "inputs": []
+          }
+        ]
+      }
+    },
+    "createdAt": "2022-04-18T18:27:37.000Z"
+  },
+  "version": {
+    "_id": "625dad99f66cf8e36da35629",
+    "variables": [
+      "sessions",
+      "user_id",
+      "timestamp",
+      "platform",
+      "locale",
+      "user_name",
+      "genre",
+      "alone_notalone",
+      "movie_comp"
+    ],
+    "platformData": {
+      "slots": [
+        {
+          "key": "ih1j3a20",
+          "name": "user_name",
+          "type": {
+            "value": "VF.NAME"
+          },
+          "color": "#3A7685",
+          "inputs": []
+        },
+        {
+          "key": "wk2x3ap4",
+          "name": "duration",
+          "type": {
+            "value": "VF.NUMBER"
+          },
+          "color": "#4F9ED1",
+          "inputs": []
+        },
+        {
+          "key": "h63g3a90",
+          "name": "year",
+          "type": {
+            "value": "VF.NUMBER"
+          },
+          "color": "#4FA9B3",
+          "inputs": []
+        },
+        {
+          "key": "6w3y3aqt",
+          "name": "mood",
+          "type": {
+            "value": "Custom"
+          },
+          "color": "#A086C4",
+          "inputs": [
+            "mood,feel vibe"
+          ]
+        },
+        {
+          "key": "zm6h3awq",
+          "name": "alone",
+          "type": {
+            "value": "VF.NUMBER"
+          },
+          "color": "#A086C4",
+          "inputs": []
+        }
+      ],
+      "intents": [
+        {
+          "key": "phi3alv",
+          "name": "Let's go Felmo",
+          "inputs": [
+            {
+              "text": "lets",
+              "slots": []
+            },
+            {
+              "text": "go felmo",
+              "slots": []
+            },
+            {
+              "text": "lets go",
+              "slots": []
+            },
+            {
+              "text": "lets go felmo",
+              "slots": []
+            }
+          ],
+          "slots": []
+        },
+        {
+          "key": "2j243adq",
+          "name": "Horror",
+          "inputs": [
+            {
+              "text": "scary movie",
+              "slots": []
+            },
+            {
+              "text": "horror movie",
+              "slots": []
+            },
+            {
+              "text": "fear",
+              "slots": []
+            },
+            {
+              "text": "scary",
+              "slots": []
+            },
+            {
+              "text": "horror",
+              "slots": []
+            }
+          ],
+          "slots": []
+        },
+        {
+          "key": "fm2k3af6",
+          "name": "Romance",
+          "inputs": [
+            {
+              "text": "rom",
+              "slots": []
+            },
+            {
+              "text": "romantic",
+              "slots": []
+            },
+            {
+              "text": "romance",
+              "slots": []
+            }
+          ],
+          "slots": []
+        },
+        {
+          "key": "x42r3acp",
+          "name": "Fantasy",
+          "inputs": [
+            {
+              "text": "fantastic",
+              "slots": []
+            },
+            {
+              "text": "mystical",
+              "slots": []
+            },
+            {
+              "text": "magical",
+              "slots": []
+            },
+            {
+              "text": "speculative",
+              "slots": []
+            },
+            {
+              "text": "fantasy",
+              "slots": []
+            }
+          ],
+          "slots": []
+        },
+        {
+          "key": "VF.YES",
+          "name": "VF.YES",
+          "inputs": [],
+          "slots": []
+        },
+        {
+          "key": "VF.NO",
+          "name": "VF.NO",
+          "inputs": [],
+          "slots": []
+        },
+        {
+          "key": "jdfj3ac3",
+          "name": "Genre",
+          "inputs": [
+            {
+              "text": "genra",
+              "slots": []
+            },
+            {
+              "text": "genr",
+              "slots": []
+            },
+            {
+              "text": "Genre",
+              "slots": []
+            }
+          ],
+          "slots": []
+        }
+      ],
+      "settings": {
+        "restart": true,
+        "repeat": 100,
+        "locales": [
+          "en-US"
+        ],
+        "defaultVoice": "Alexa"
+      },
+      "publishing": {},
+      "platform": "general"
+    },
+    "name": "Initial Version",
+    "projectID": "625dad99713ad4001c39fc87",
+    "rootDiagramID": "625dad99f66cf8e36da3562a",
+    "creatorID": 85462,
+    "prototype": {
+      "data": {
+        "name": "Felmo the movie recommendation bot test #1",
+        "locales": [
+          "en-US"
+        ]
+      },
+      "model": {
+        "intents": [
+          {
+            "key": "phi3alv",
+            "name": "Let's go Felmo",
+            "inputs": [
+              {
+                "text": "lets",
+                "slots": []
+              },
+              {
+                "text": "go felmo",
+                "slots": []
+              },
+              {
+                "text": "lets go",
+                "slots": []
+              },
+              {
+                "text": "lets go felmo",
+                "slots": []
+              }
+            ],
+            "slots": []
+          },
+          {
+            "key": "2j243adq",
+            "name": "Horror",
+            "inputs": [
+              {
+                "text": "scary movie",
+                "slots": []
+              },
+              {
+                "text": "horror movie",
+                "slots": []
+              },
+              {
+                "text": "fear",
+                "slots": []
+              },
+              {
+                "text": "scary",
+                "slots": []
+              },
+              {
+                "text": "horror",
+                "slots": []
+              }
+            ],
+            "slots": []
+          },
+          {
+            "key": "fm2k3af6",
+            "name": "Romance",
+            "inputs": [
+              {
+                "text": "rom",
+                "slots": []
+              },
+              {
+                "text": "romantic",
+                "slots": []
+              },
+              {
+                "text": "romance",
+                "slots": []
+              }
+            ],
+            "slots": []
+          },
+          {
+            "key": "x42r3acp",
+            "name": "Fantasy",
+            "inputs": [
+              {
+                "text": "fantastic",
+                "slots": []
+              },
+              {
+                "text": "mystical",
+                "slots": []
+              },
+              {
+                "text": "magical",
+                "slots": []
+              },
+              {
+                "text": "speculative",
+                "slots": []
+              },
+              {
+                "text": "fantasy",
+                "slots": []
+              }
+            ],
+            "slots": []
+          },
+          {
+            "key": "VF.YES",
+            "name": "VF.YES",
+            "inputs": [
+              {
+                "text": "yes"
+              },
+              {
+                "text": "yea"
+              },
+              {
+                "text": "ok"
+              },
+              {
+                "text": "okay"
+              },
+              {
+                "text": "yup"
+              },
+              {
+                "text": "ya"
+              },
+              {
+                "text": "sure"
+              }
+            ],
+            "slots": []
+          },
+          {
+            "key": "VF.NO",
+            "name": "VF.NO",
+            "inputs": [
+              {
+                "text": "no"
+              },
+              {
+                "text": "nope"
+              },
+              {
+                "text": "nay"
+              },
+              {
+                "text": "nah"
+              },
+              {
+                "text": "no way"
+              },
+              {
+                "text": "negative"
+              }
+            ],
+            "slots": []
+          },
+          {
+            "key": "jdfj3ac3",
+            "name": "Genre",
+            "inputs": [
+              {
+                "text": "genra",
+                "slots": []
+              },
+              {
+                "text": "genr",
+                "slots": []
+              },
+              {
+                "text": "Genre",
+                "slots": []
+              }
+            ],
+            "slots": []
+          }
+        ],
+        "slots": [
+          {
+            "key": "ih1j3a20",
+            "name": "user_name",
+            "type": {
+              "value": "VF.NAME"
+            },
+            "color": "#3A7685",
+            "inputs": []
+          },
+          {
+            "key": "wk2x3ap4",
+            "name": "duration",
+            "type": {
+              "value": "VF.NUMBER"
+            },
+            "color": "#4F9ED1",
+            "inputs": []
+          },
+          {
+            "key": "h63g3a90",
+            "name": "year",
+            "type": {
+              "value": "VF.NUMBER"
+            },
+            "color": "#4FA9B3",
+            "inputs": []
+          },
+          {
+            "key": "6w3y3aqt",
+            "name": "mood",
+            "type": {
+              "value": "Custom"
+            },
+            "color": "#A086C4",
+            "inputs": [
+              "mood,feel vibe"
+            ]
+          },
+          {
+            "key": "zm6h3awq",
+            "name": "alone",
+            "type": {
+              "value": "VF.NUMBER"
+            },
+            "color": "#A086C4",
+            "inputs": []
+          }
+        ]
+      },
+      "context": {
+        "stack": [
+          {
+            "programID": "625dad99f66cf8e36da3562a",
+            "storage": {},
+            "variables": {}
+          }
+        ],
+        "variables": {}
+      },
+      "settings": {
+        "layout": "text-and-dialog"
+      },
+      "platform": "general"
+    }
+  },
+  "diagrams": {
+    "625dad99f66cf8e36da3562a": {
+      "_id": "625dad99f66cf8e36da3562a",
+      "offsetX": 272,
+      "offsetY": 104,
+      "zoom": 22.655488354255827,
+      "variables": [],
+      "name": "ROOT",
+      "versionID": "625dad99f66cf8e36da35629",
+      "creatorID": 85462,
+      "modified": 1650930042,
+      "nodes": {
+        "start00000000000000000000": {
+          "nodeID": "start00000000000000000000",
+          "type": "start",
+          "coords": [
+            360,
+            120
+          ],
+          "data": {
+            "name": "Start",
+            "color": "standard",
+            "steps": [],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625dadf7d1ef9d9e2539594e",
+                "id": "60b7e7cad4b17f0ce7bddf11",
+                "data": {
+                  "points": [
+                    {
+                      "point": [
+                        524.9999694824219,
+                        200.00000381469724
+                      ]
+                    },
+                    {
+                      "point": [
+                        700,
+                        200.00000381469724
+                      ]
+                    },
+                    {
+                      "point": [
+                        700,
+                        298.9999732971191
+                      ],
+                      "toTop": true,
+                      "allowedToTop": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "625dadf7d1ef9d9e2539594b": {
+          "nodeID": "625dadf7d1ef9d9e2539594b",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "Hello there, my name is felmo the movie recommendation bot! I’m here to help you find a piece of entertainment you would enjoy streaming in a short time! In order to help you, I am going to ask you a series of questions and guide you on how to navigate the app. If that all sounds good, say “let's go felmo”. "
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625db18ed1ef9d9e25395959",
+                "id": "625dadf7d1ef9d9e2539594d",
+                "data": {
+                  "points": [
+                    {
+                      "point": [
+                        1188.7499694824219,
+                        501.00000381469727
+                      ]
+                    },
+                    {
+                      "point": [
+                        1228.124984741211,
+                        501.00000381469727
+                      ]
+                    },
+                    {
+                      "point": [
+                        1228.124984741211,
+                        254.7499885559082
+                      ]
+                    },
+                    {
+                      "point": [
+                        1267.5,
+                        254.7499885559082
+                      ],
+                      "allowedToTop": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "625dadf7d1ef9d9e2539594e": {
+          "nodeID": "625dadf7d1ef9d9e2539594e",
+          "type": "block",
+          "coords": [
+            700,
+            300
+          ],
+          "data": {
+            "name": "NEW_GREETING",
+            "color": "standard",
+            "steps": [
+              "625dadf7d1ef9d9e2539594b"
+            ]
+          }
+        },
+        "625db18ed1ef9d9e25395955": {
+          "nodeID": "625db18ed1ef9d9e25395955",
+          "type": "interaction",
+          "data": {
+            "name": "Choice",
+            "choices": [
+              {
+                "intent": "phi3alv",
+                "action": "PATH",
+                "mappings": []
+              }
+            ],
+            "intentScope": "GLOBAL",
+            "noMatch": {
+              "types": [
+                "reprompt"
+              ],
+              "pathName": "No Match",
+              "randomize": false,
+              "reprompts": [
+                {
+                  "voice": "Alexa",
+                  "content": ""
+                }
+              ]
+            },
+            "noReply": null,
+            "chips": null,
+            "buttons": null,
+            "ports": [
+              {
+                "type": "else",
+                "target": null,
+                "id": "625db18ed1ef9d9e25395958"
+              },
+              {
+                "type": "",
+                "target": "625db209d1ef9d9e25395964",
+                "id": "625db18ed1ef9d9e25395957"
+              }
+            ]
+          }
+        },
+        "625db18ed1ef9d9e25395959": {
+          "nodeID": "625db18ed1ef9d9e25395959",
+          "type": "block",
+          "coords": [
+            1108.75,
+            223.75
+          ],
+          "data": {
+            "name": "Go_felmo",
+            "color": "standard",
+            "steps": [
+              "625db18ed1ef9d9e25395955"
+            ]
+          }
+        },
+        "625db209d1ef9d9e25395961": {
+          "nodeID": "625db209d1ef9d9e25395961",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "Awesome!"
+              },
+              {
+                "voice": "Alexa",
+                "content": "Perfect!"
+              },
+              {
+                "voice": "Alexa",
+                "content": "Fantastic!"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625db268d1ef9d9e25395970",
+                "id": "625db209d1ef9d9e25395963"
+              }
+            ]
+          }
+        },
+        "625db209d1ef9d9e25395964": {
+          "nodeID": "625db209d1ef9d9e25395964",
+          "type": "block",
+          "coords": [
+            1530,
+            233.75
+          ],
+          "data": {
+            "name": "Felmo_confirm",
+            "color": "standard",
+            "steps": [
+              "625db209d1ef9d9e25395961"
+            ]
+          }
+        },
+        "625db268d1ef9d9e2539596d": {
+          "nodeID": "625db268d1ef9d9e2539596d",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "I just realized I have forgotten to ask for your name before we get on this adventure together. I guess bots make mistakes too, What’s your name?"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625db2acd1ef9d9e2539597c",
+                "id": "625db268d1ef9d9e2539596f"
+              }
+            ]
+          }
+        },
+        "625db268d1ef9d9e25395970": {
+          "nodeID": "625db268d1ef9d9e25395970",
+          "type": "block",
+          "coords": [
+            1953.75,
+            191.49999999999994
+          ],
+          "data": {
+            "name": "User_name_prompt",
+            "color": "standard",
+            "steps": [
+              "625db268d1ef9d9e2539596d"
+            ]
+          }
+        },
+        "625db2acd1ef9d9e25395978": {
+          "nodeID": "625db2acd1ef9d9e25395978",
+          "type": "captureV2",
+          "data": {
+            "intentScope": "GLOBAL",
+            "capture": {
+              "type": "query",
+              "variable": "user_name"
+            },
+            "noReply": null,
+            "noMatch": null,
+            "chips": null,
+            "ports": [
+              {
+                "type": "next",
+                "target": "625db340d1ef9d9e2539598a",
+                "id": "625db2acd1ef9d9e2539597a"
+              },
+              {
+                "type": "else",
+                "target": null,
+                "id": "625db2acd1ef9d9e2539597b"
+              }
+            ]
+          }
+        },
+        "625db2acd1ef9d9e2539597c": {
+          "nodeID": "625db2acd1ef9d9e2539597c",
+          "type": "block",
+          "coords": [
+            2393.75,
+            185.24999999999994
+          ],
+          "data": {
+            "name": "User_name",
+            "color": "standard",
+            "steps": [
+              "625db2acd1ef9d9e25395978"
+            ]
+          }
+        },
+        "625db340d1ef9d9e25395987": {
+          "nodeID": "625db340d1ef9d9e25395987",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "Great to hangout with you {{[user_name].user_name}}!!!<break strength=\"medium\" />"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625db375d1ef9d9e25395992",
+                "id": "625db340d1ef9d9e25395989"
+              }
+            ]
+          }
+        },
+        "625db340d1ef9d9e2539598a": {
+          "nodeID": "625db340d1ef9d9e2539598a",
+          "type": "block",
+          "coords": [
+            2926.6248192363737,
+            281.460450204789
+          ],
+          "data": {
+            "name": "name_confirmation",
+            "color": "standard",
+            "steps": [
+              "625db340d1ef9d9e25395987"
+            ]
+          }
+        },
+        "625db375d1ef9d9e25395992": {
+          "nodeID": "625db375d1ef9d9e25395992",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "Now that we’re on a first name basis, let’s find you an entertaining movie!<break strength=\"medium\" />"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625db3afd1ef9d9e2539599f",
+                "id": "625db375d1ef9d9e25395994"
+              }
+            ]
+          }
+        },
+        "625db375d1ef9d9e25395995": {
+          "nodeID": "625db375d1ef9d9e25395995",
+          "type": "block",
+          "coords": [
+            3426.1468522647824,
+            325.2852739968437
+          ],
+          "data": {
+            "name": "Pre_question_launch",
+            "color": "standard",
+            "steps": [
+              "625db375d1ef9d9e25395992"
+            ]
+          }
+        },
+        "625db3afd1ef9d9e2539599f": {
+          "nodeID": "625db3afd1ef9d9e2539599f",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "What would you say is the genre you would like to find a movie from? (you could say things such as “fantasy”, “horror”, “romance”)"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625db4ccd1ef9d9e253959ba",
+                "id": "625db3afd1ef9d9e253959a1"
+              }
+            ]
+          }
+        },
+        "625db3afd1ef9d9e253959a2": {
+          "nodeID": "625db3afd1ef9d9e253959a2",
+          "type": "block",
+          "coords": [
+            3832.682288107439,
+            391.4699860625384
+          ],
+          "data": {
+            "name": "Genre_prompt",
+            "color": "standard",
+            "steps": [
+              "625db3afd1ef9d9e2539599f",
+              "625db4ccd1ef9d9e253959ba"
+            ]
+          }
+        },
+        "625db3e0d1ef9d9e253959aa": {
+          "nodeID": "625db3e0d1ef9d9e253959aa",
+          "type": "interaction",
+          "data": {
+            "name": "Choice",
+            "choices": [
+              {
+                "intent": "2j243adq",
+                "action": "PATH",
+                "mappings": []
+              },
+              {
+                "intent": "fm2k3af6",
+                "action": "PATH",
+                "mappings": []
+              },
+              {
+                "intent": "x42r3acp",
+                "action": "PATH",
+                "mappings": []
+              }
+            ],
+            "intentScope": "GLOBAL",
+            "noMatch": {
+              "types": [
+                "reprompt"
+              ],
+              "pathName": "No Match",
+              "randomize": false,
+              "reprompts": [
+                {
+                  "voice": "Alexa",
+                  "content": ""
+                }
+              ]
+            },
+            "noReply": null,
+            "chips": null,
+            "buttons": null,
+            "ports": [
+              {
+                "type": "else",
+                "target": null,
+                "id": "625db3e0d1ef9d9e253959ad"
+              },
+              {
+                "type": "",
+                "target": null,
+                "id": "625db3e0d1ef9d9e253959ac"
+              },
+              {
+                "type": "",
+                "target": null,
+                "id": "625db429d1ef9d9e253959b5"
+              },
+              {
+                "type": "",
+                "target": null,
+                "id": "625db445d1ef9d9e253959b7"
+              }
+            ]
+          }
+        },
+        "625db3e0d1ef9d9e253959ae": {
+          "nodeID": "625db3e0d1ef9d9e253959ae",
+          "type": "block",
+          "coords": [
+            3500.438157906265,
+            910.2269262833408
+          ],
+          "data": {
+            "name": "genre_input",
+            "color": "standard",
+            "steps": [
+              "625db3e0d1ef9d9e253959aa"
+            ]
+          }
+        },
+        "625db4ccd1ef9d9e253959ba": {
+          "nodeID": "625db4ccd1ef9d9e253959ba",
+          "type": "captureV2",
+          "data": {
+            "intentScope": "GLOBAL",
+            "capture": {
+              "type": "query",
+              "variable": "genre"
+            },
+            "noReply": null,
+            "noMatch": null,
+            "chips": null,
+            "ports": [
+              {
+                "type": "next",
+                "target": "625debe11fd4b60d8a11dd50",
+                "id": "625db4ccd1ef9d9e253959bc",
+                "data": {
+                  "points": [
+                    {
+                      "point": [
+                        3997.6824895366804,
+                        599.4699589933773
+                      ]
+                    },
+                    {
+                      "point": [
+                        4126.806393258138,
+                        599.4699589933773
+                      ]
+                    },
+                    {
+                      "point": [
+                        4126.806393258138,
+                        303.16599336972314
+                      ]
+                    },
+                    {
+                      "point": [
+                        4255.930296979596,
+                        303.16599336972314
+                      ],
+                      "allowedToTop": true
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "else",
+                "target": null,
+                "id": "625db4ccd1ef9d9e253959bd"
+              }
+            ]
+          }
+        },
+        "625debe11fd4b60d8a11dd4d": {
+          "nodeID": "625debe11fd4b60d8a11dd4d",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "Okay! {{[genre].genre}}! Got it!"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625dec851fd4b60d8a11dd58",
+                "id": "625debe11fd4b60d8a11dd4f"
+              }
+            ]
+          }
+        },
+        "625debe11fd4b60d8a11dd50": {
+          "nodeID": "625debe11fd4b60d8a11dd50",
+          "type": "block",
+          "coords": [
+            4420.930302233995,
+            272.16597169240646
+          ],
+          "data": {
+            "name": "Genre_confirm",
+            "color": "standard",
+            "steps": [
+              "625debe11fd4b60d8a11dd4d"
+            ]
+          }
+        },
+        "625dec851fd4b60d8a11dd58": {
+          "nodeID": "625dec851fd4b60d8a11dd58",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "What would you say is a movie length that would work best for you? (you can say or input a number such as “30” which would mean 30 minutes or 120 which would mean 2 hours or “skip” which would allow you to skip this question) "
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625decab1fd4b60d8a11dd62",
+                "id": "625dec851fd4b60d8a11dd5a"
+              }
+            ]
+          }
+        },
+        "625dec851fd4b60d8a11dd5b": {
+          "nodeID": "625dec851fd4b60d8a11dd5b",
+          "type": "block",
+          "coords": [
+            4879.9573170303765,
+            287.2779721795295
+          ],
+          "data": {
+            "name": "Duration_prompt",
+            "color": "standard",
+            "steps": [
+              "625dec851fd4b60d8a11dd58",
+              "625decab1fd4b60d8a11dd62"
+            ]
+          }
+        },
+        "625decab1fd4b60d8a11dd62": {
+          "nodeID": "625decab1fd4b60d8a11dd62",
+          "type": "captureV2",
+          "data": {
+            "intentScope": "GLOBAL",
+            "capture": {
+              "type": "query",
+              "variable": "duration"
+            },
+            "noReply": null,
+            "noMatch": null,
+            "chips": null,
+            "ports": [
+              {
+                "type": "next",
+                "target": "625ded7c1fd4b60d8a11dd75",
+                "id": "625decab1fd4b60d8a11dd64"
+              },
+              {
+                "type": "else",
+                "target": null,
+                "id": "625decab1fd4b60d8a11dd65"
+              }
+            ]
+          }
+        },
+        "625ded7c1fd4b60d8a11dd72": {
+          "nodeID": "625ded7c1fd4b60d8a11dd72",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "Got it! {{[duration].duration}} minutes! "
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625dedb61fd4b60d8a11dd8c",
+                "id": "625ded7c1fd4b60d8a11dd74",
+                "data": {
+                  "points": [
+                    {
+                      "point": [
+                        6008.826155193193,
+                        491.612080370373
+                      ]
+                    },
+                    {
+                      "point": [
+                        6089.008111870353,
+                        491.612080370373
+                      ]
+                    },
+                    {
+                      "point": [
+                        6089.008111870353,
+                        310.0475283254887
+                      ]
+                    },
+                    {
+                      "point": [
+                        6169.190068547514,
+                        310.0475283254887
+                      ],
+                      "allowedToTop": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "625ded7c1fd4b60d8a11dd75": {
+          "nodeID": "625ded7c1fd4b60d8a11dd75",
+          "type": "block",
+          "coords": [
+            5332.085326285715,
+            411.6120797860301
+          ],
+          "data": {
+            "name": "Duration_confirm",
+            "color": "standard",
+            "steps": [
+              "625ded7c1fd4b60d8a11dd72"
+            ]
+          }
+        },
+        "625dedb61fd4b60d8a11dd89": {
+          "nodeID": "625dedb61fd4b60d8a11dd89",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "Do you have a specific year in mind that you would want the movie to be from? (As an example you can say or input “1990”. I will not suggest movies that are only from that year but try to find titles closer to that year)"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625dee171fd4b60d8a11dd93",
+                "id": "625dedb61fd4b60d8a11dd8b"
+              }
+            ]
+          }
+        },
+        "625dedb61fd4b60d8a11dd8c": {
+          "nodeID": "625dedb61fd4b60d8a11dd8c",
+          "type": "block",
+          "coords": [
+            5822.449394749388,
+            279.04755272496664
+          ],
+          "data": {
+            "name": "year_prompt",
+            "color": "standard",
+            "steps": [
+              "625dedb61fd4b60d8a11dd89",
+              "625dee171fd4b60d8a11dd93"
+            ]
+          }
+        },
+        "625dee171fd4b60d8a11dd93": {
+          "nodeID": "625dee171fd4b60d8a11dd93",
+          "type": "captureV2",
+          "data": {
+            "intentScope": "GLOBAL",
+            "capture": {
+              "type": "query",
+              "variable": "year"
+            },
+            "noReply": null,
+            "noMatch": null,
+            "chips": null,
+            "ports": [
+              {
+                "type": "next",
+                "target": "625dee731fd4b60d8a11dda1",
+                "id": "625dee171fd4b60d8a11dd95"
+              },
+              {
+                "type": "else",
+                "target": null,
+                "id": "625dee171fd4b60d8a11dd96"
+              }
+            ]
+          }
+        },
+        "625dee731fd4b60d8a11dd9e": {
+          "nodeID": "625dee731fd4b60d8a11dd9e",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "Great! I got you! {{[year].year}} it is!"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625def4e1fd4b60d8a11ddac",
+                "id": "625dee731fd4b60d8a11dda0",
+                "data": {
+                  "points": [
+                    {
+                      "point": [
+                        6458.600421682084,
+                        366.9885807075447
+                      ]
+                    },
+                    {
+                      "point": [
+                        6482.600421682084,
+                        366.9885807075447
+                      ],
+                      "locked": true
+                    },
+                    {
+                      "point": [
+                        6482.600421682084,
+                        367.14672883964306
+                      ],
+                      "locked": true
+                    },
+                    {
+                      "point": [
+                        6530.461749682748,
+                        367.14672883964306
+                      ],
+                      "locked": true
+                    },
+                    {
+                      "point": [
+                        6530.461749682748,
+                        274.93791606198005
+                      ],
+                      "locked": true
+                    },
+                    {
+                      "point": [
+                        6755.914055460492,
+                        274.93791606198005
+                      ]
+                    },
+                    {
+                      "point": [
+                        6755.914055460492,
+                        298.93791606198005
+                      ],
+                      "toTop": true,
+                      "allowedToTop": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "625dee731fd4b60d8a11dda1": {
+          "nodeID": "625dee731fd4b60d8a11dda1",
+          "type": "block",
+          "coords": [
+            6293.600772257879,
+            286.9885979587469
+          ],
+          "data": {
+            "name": "year_confirmation",
+            "color": "standard",
+            "steps": [
+              "625dee731fd4b60d8a11dd9e"
+            ]
+          }
+        },
+        "625def4e1fd4b60d8a11dda9": {
+          "nodeID": "625def4e1fd4b60d8a11dda9",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "What would you say is the overall mood you are trying to experience? (You can say or input moods such as “happy”, “sad”, “nostalgic”, “upbeat”)"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625def851fd4b60d8a11ddb4",
+                "id": "625def4e1fd4b60d8a11ddab"
+              }
+            ]
+          }
+        },
+        "625def4e1fd4b60d8a11ddac": {
+          "nodeID": "625def4e1fd4b60d8a11ddac",
+          "type": "block",
+          "coords": [
+            6755.91432417701,
+            299.93791825256
+          ],
+          "data": {
+            "name": "mood_prompt",
+            "color": "standard",
+            "steps": [
+              "625def4e1fd4b60d8a11dda9",
+              "625def851fd4b60d8a11ddb4"
+            ]
+          }
+        },
+        "625def851fd4b60d8a11ddb4": {
+          "nodeID": "625def851fd4b60d8a11ddb4",
+          "type": "captureV2",
+          "data": {
+            "intentScope": "GLOBAL",
+            "capture": {
+              "type": "query",
+              "variable": "mood"
+            },
+            "noReply": null,
+            "noMatch": null,
+            "chips": null,
+            "ports": [
+              {
+                "type": "next",
+                "target": "625df20f1fd4b60d8a11dddc",
+                "id": "625def851fd4b60d8a11ddb6",
+                "data": {
+                  "points": [
+                    {
+                      "point": [
+                        6920.914481147409,
+                        529.9379209895491
+                      ]
+                    },
+                    {
+                      "point": [
+                        6944.914481147409,
+                        529.9379209895491
+                      ]
+                    },
+                    {
+                      "point": [
+                        6944.914481147409,
+                        621.4372534327017
+                      ]
+                    },
+                    {
+                      "point": [
+                        6791.582601216981,
+                        621.4372534327017
+                      ]
+                    },
+                    {
+                      "point": [
+                        6791.582601216981,
+                        712.9365858758543
+                      ],
+                      "toTop": true,
+                      "allowedToTop": true
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "else",
+                "target": null,
+                "id": "625def851fd4b60d8a11ddb7"
+              }
+            ]
+          }
+        },
+        "625df0e61fd4b60d8a11ddc1": {
+          "nodeID": "625df0e61fd4b60d8a11ddc1",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "yup yuuuuuuup! I like that! Happy is a good choice!"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625df3921fd4b60d8a11de12",
+                "id": "625df0e61fd4b60d8a11ddc3",
+                "data": {
+                  "points": [
+                    {
+                      "point": [
+                        7476.678419541649,
+                        355.5603448074665
+                      ]
+                    },
+                    {
+                      "point": [
+                        7729.42204456983,
+                        355.5603448074665
+                      ]
+                    },
+                    {
+                      "point": [
+                        7729.42204456983,
+                        494.722173837769
+                      ],
+                      "locked": true
+                    },
+                    {
+                      "point": [
+                        7958.16566959801,
+                        494.722173837769
+                      ],
+                      "locked": true
+                    },
+                    {
+                      "point": [
+                        7958.16566959801,
+                        494.89050665095834
+                      ],
+                      "locked": true
+                    },
+                    {
+                      "point": [
+                        7982.16566959801,
+                        494.89050665095834
+                      ],
+                      "allowedToTop": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "625df0e61fd4b60d8a11ddc4": {
+          "nodeID": "625df0e61fd4b60d8a11ddc4",
+          "type": "block",
+          "coords": [
+            7311.678209468313,
+            264.56034843656954
+          ],
+          "data": {
+            "name": "happy_reply",
+            "color": "standard",
+            "steps": [
+              "625df0e61fd4b60d8a11ddc1"
+            ]
+          }
+        },
+        "625df1921fd4b60d8a11ddcb": {
+          "nodeID": "625df1921fd4b60d8a11ddcb",
+          "type": "ifV2",
+          "data": {
+            "expressions": [
+              {
+                "type": null,
+                "name": "happy",
+                "value": [
+                  {
+                    "logicInterface": "variable",
+                    "type": "equals",
+                    "value": [
+                      {
+                        "type": "variable",
+                        "value": "mood"
+                      },
+                      {
+                        "type": "value",
+                        "value": "happy"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": null,
+                "name": "sad",
+                "value": [
+                  {
+                    "logicInterface": "variable",
+                    "type": "equals",
+                    "value": [
+                      {
+                        "type": "variable",
+                        "value": "mood"
+                      },
+                      {
+                        "type": "value",
+                        "value": "sad"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": null,
+                "name": "nostalgic",
+                "value": [
+                  {
+                    "logicInterface": "variable",
+                    "type": "equals",
+                    "value": [
+                      {
+                        "type": "variable",
+                        "value": "mood"
+                      },
+                      {
+                        "type": "value",
+                        "value": "nostalgic"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": null,
+                "name": "upbeat",
+                "value": [
+                  {
+                    "logicInterface": "variable",
+                    "type": "equals",
+                    "value": [
+                      {
+                        "type": "variable",
+                        "value": "mood"
+                      },
+                      {
+                        "type": "value",
+                        "value": "upbeat"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "noMatch": {
+              "type": "path",
+              "pathName": "maybe test your spelling?"
+            },
+            "ports": [
+              {
+                "type": "else",
+                "target": null,
+                "id": "625df1921fd4b60d8a11ddce"
+              },
+              {
+                "type": "",
+                "target": "625df0e61fd4b60d8a11ddc4",
+                "id": "625df1921fd4b60d8a11ddcd",
+                "data": {
+                  "event": {
+                    "type": "happy"
+                  }
+                }
+              },
+              {
+                "type": "",
+                "target": "625df2bf1fd4b60d8a11ddf0",
+                "id": "625df1ed1fd4b60d8a11ddd4",
+                "data": {
+                  "points": [
+                    {
+                      "point": [
+                        6956.582414512287,
+                        847.9366050213937
+                      ]
+                    },
+                    {
+                      "point": [
+                        7087.551772071365,
+                        847.9366050213937
+                      ]
+                    },
+                    {
+                      "point": [
+                        7087.551772071365,
+                        451.2615875757693
+                      ]
+                    },
+                    {
+                      "point": [
+                        7218.521129630443,
+                        451.2615875757693
+                      ],
+                      "allowedToTop": true
+                    }
+                  ],
+                  "event": {
+                    "type": "sad"
+                  }
+                }
+              },
+              {
+                "type": "",
+                "target": "625df2d21fd4b60d8a11ddfa",
+                "id": "625df2351fd4b60d8a11dde8",
+                "data": {
+                  "points": [
+                    {
+                      "point": [
+                        6956.582414512287,
+                        901.9366101030392
+                      ]
+                    },
+                    {
+                      "point": [
+                        7124.834765848717,
+                        901.9366101030392
+                      ]
+                    },
+                    {
+                      "point": [
+                        7124.834765848717,
+                        637.1027974375419
+                      ]
+                    },
+                    {
+                      "point": [
+                        7293.087117185148,
+                        637.1027974375419
+                      ],
+                      "allowedToTop": true
+                    }
+                  ],
+                  "event": {
+                    "type": "nostalgic"
+                  }
+                }
+              },
+              {
+                "type": "",
+                "target": "625df2d61fd4b60d8a11de04",
+                "id": "625df25b1fd4b60d8a11ddea",
+                "data": {
+                  "points": [
+                    {
+                      "point": [
+                        6956.582414512287,
+                        955.9366151846849
+                      ]
+                    },
+                    {
+                      "point": [
+                        7163.264892579395,
+                        955.9366151846849
+                      ]
+                    },
+                    {
+                      "point": [
+                        7163.264892579395,
+                        797.7063121329014
+                      ]
+                    },
+                    {
+                      "point": [
+                        7369.947370646501,
+                        797.7063121329014
+                      ],
+                      "allowedToTop": true
+                    }
+                  ],
+                  "event": {
+                    "type": "upbeat"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "625df20f1fd4b60d8a11dddc": {
+          "nodeID": "625df20f1fd4b60d8a11dddc",
+          "type": "block",
+          "coords": [
+            6791.58265953275,
+            713.9365833350315
+          ],
+          "data": {
+            "name": "if_mood_detector",
+            "color": "standard",
+            "steps": [
+              "625df1921fd4b60d8a11ddcb"
+            ]
+          }
+        },
+        "625df2bf1fd4b60d8a11dded": {
+          "nodeID": "625df2bf1fd4b60d8a11dded",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "Awwwww! Hope ur just trying to watch a sad movie but aren't actually sad! "
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625df3921fd4b60d8a11de0f",
+                "id": "625df2bf1fd4b60d8a11ddef"
+              }
+            ]
+          }
+        },
+        "625df2bf1fd4b60d8a11ddf0": {
+          "nodeID": "625df2bf1fd4b60d8a11ddf0",
+          "type": "block",
+          "coords": [
+            7383.521327981367,
+            420.2615850349464
+          ],
+          "data": {
+            "name": "sad_reply",
+            "color": "standard",
+            "steps": [
+              "625df2bf1fd4b60d8a11dded"
+            ]
+          }
+        },
+        "625df2d21fd4b60d8a11ddf7": {
+          "nodeID": "625df2d21fd4b60d8a11ddf7",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "Ahhhh the old streets of nostalgia! Therapeutic!"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625df3921fd4b60d8a11de0f",
+                "id": "625df2d21fd4b60d8a11ddf9"
+              }
+            ]
+          }
+        },
+        "625df2d21fd4b60d8a11ddfa": {
+          "nodeID": "625df2d21fd4b60d8a11ddfa",
+          "type": "block",
+          "coords": [
+            7458.087245518496,
+            606.1027948967193
+          ],
+          "data": {
+            "name": "nostalgic_reply",
+            "color": "standard",
+            "steps": [
+              "625df2d21fd4b60d8a11ddf7"
+            ]
+          }
+        },
+        "625df2d61fd4b60d8a11de01": {
+          "nodeID": "625df2d61fd4b60d8a11de01",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "Yeahhh upbeat is the way to go!"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625df3921fd4b60d8a11de0f",
+                "id": "625df2d61fd4b60d8a11de03"
+              }
+            ]
+          }
+        },
+        "625df2d61fd4b60d8a11de04": {
+          "nodeID": "625df2d61fd4b60d8a11de04",
+          "type": "block",
+          "coords": [
+            7534.947498979841,
+            766.7063095920782
+          ],
+          "data": {
+            "name": "upbeat_reply",
+            "color": "standard",
+            "steps": [
+              "625df2d61fd4b60d8a11de01"
+            ]
+          }
+        },
+        "625df3921fd4b60d8a11de0f": {
+          "nodeID": "625df3921fd4b60d8a11de0f",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "We’re only a few short questions away from your recommendations! Stay with me {{[user_name].user_name}}!!"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625df4201fd4b60d8a11de20",
+                "id": "625df3921fd4b60d8a11de11"
+              }
+            ]
+          }
+        },
+        "625df3921fd4b60d8a11de12": {
+          "nodeID": "625df3921fd4b60d8a11de12",
+          "type": "block",
+          "coords": [
+            8147.165728165774,
+            463.8905066390633
+          ],
+          "data": {
+            "name": "motivation_message",
+            "color": "standard",
+            "steps": [
+              "625df3921fd4b60d8a11de0f"
+            ]
+          }
+        },
+        "625df4201fd4b60d8a11de1d": {
+          "nodeID": "625df4201fd4b60d8a11de1d",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "Are you looking for a movie to watch alone or with others? (you can say or input “1\" for alone or “2\" for not alone)"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625df4391fd4b60d8a11de27",
+                "id": "625df4201fd4b60d8a11de1f"
+              }
+            ]
+          }
+        },
+        "625df4201fd4b60d8a11de20": {
+          "nodeID": "625df4201fd4b60d8a11de20",
+          "type": "block",
+          "coords": [
+            8642.245929940142,
+            463.89050663906363
+          ],
+          "data": {
+            "name": "alone_prompt",
+            "color": "standard",
+            "steps": [
+              "625df4201fd4b60d8a11de1d",
+              "625df4391fd4b60d8a11de27"
+            ]
+          }
+        },
+        "625df4391fd4b60d8a11de27": {
+          "nodeID": "625df4391fd4b60d8a11de27",
+          "type": "captureV2",
+          "data": {
+            "intentScope": "GLOBAL",
+            "capture": {
+              "type": "query",
+              "variable": "alone_notalone"
+            },
+            "noReply": null,
+            "noMatch": null,
+            "chips": null,
+            "ports": [
+              {
+                "type": "next",
+                "target": "625df4f61fd4b60d8a11de38",
+                "id": "625df4391fd4b60d8a11de29"
+              },
+              {
+                "type": "else",
+                "target": null,
+                "id": "625df4391fd4b60d8a11de2a"
+              }
+            ]
+          }
+        },
+        "625df4f61fd4b60d8a11de34": {
+          "nodeID": "625df4f61fd4b60d8a11de34",
+          "type": "ifV2",
+          "data": {
+            "expressions": [
+              {
+                "type": "and",
+                "name": "alone",
+                "value": [
+                  {
+                    "logicInterface": "variable",
+                    "type": "equals",
+                    "value": [
+                      {
+                        "type": "variable",
+                        "value": "alone_notalone"
+                      },
+                      {
+                        "type": "value",
+                        "value": "1"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": null,
+                "name": "not alone",
+                "value": [
+                  {
+                    "logicInterface": "variable",
+                    "type": "equals",
+                    "value": [
+                      {
+                        "type": "variable",
+                        "value": "mood"
+                      },
+                      {
+                        "type": "value",
+                        "value": "2"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "noMatch": {
+              "type": "none",
+              "pathName": "No Match"
+            },
+            "ports": [
+              {
+                "type": "else",
+                "target": null,
+                "id": "625df4f61fd4b60d8a11de37"
+              },
+              {
+                "type": "",
+                "target": "625df5601fd4b60d8a11de45",
+                "id": "625df4f61fd4b60d8a11de36",
+                "data": {
+                  "event": {
+                    "type": "alone"
+                  }
+                }
+              },
+              {
+                "type": "",
+                "target": "625df5641fd4b60d8a11de4f",
+                "id": "625df5221fd4b60d8a11de40",
+                "data": {
+                  "event": {
+                    "type": "not alone"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "625df4f61fd4b60d8a11de38": {
+          "nodeID": "625df4f61fd4b60d8a11de38",
+          "type": "block",
+          "coords": [
+            9228.007505828373,
+            532.808350965582
+          ],
+          "data": {
+            "name": "if_alone_detector",
+            "color": "standard",
+            "steps": [
+              "625df4f61fd4b60d8a11de34"
+            ]
+          }
+        },
+        "625df5601fd4b60d8a11de42": {
+          "nodeID": "625df5601fd4b60d8a11de42",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "Well good thing I’m here so you won’t have to watch it all by yourself!"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625df5ff1fd4b60d8a11de5b",
+                "id": "625df5601fd4b60d8a11de44",
+                "data": {
+                  "points": [
+                    {
+                      "point": [
+                        9873.619245951748,
+                        565.8904950942034
+                      ]
+                    },
+                    {
+                      "point": [
+                        9988.873838879032,
+                        566.8323943538442
+                      ],
+                      "allowedToTop": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "625df5601fd4b60d8a11de45": {
+          "nodeID": "625df5601fd4b60d8a11de45",
+          "type": "block",
+          "coords": [
+            9708.618788631728,
+            463.8905066390633
+          ],
+          "data": {
+            "name": "alone_reply",
+            "color": "standard",
+            "steps": [
+              "625df5601fd4b60d8a11de42"
+            ]
+          }
+        },
+        "625df5641fd4b60d8a11de4c": {
+          "nodeID": "625df5641fd4b60d8a11de4c",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "Well I hope I'm not interrupting anything! ;) haha <break strength=\"medium\" />"
+              },
+              {
+                "voice": "Alexa",
+                "content": "funny!"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625df5ff1fd4b60d8a11de5b",
+                "id": "625df5641fd4b60d8a11de4e",
+                "data": {
+                  "points": [
+                    {
+                      "point": [
+                        9873.579200333295,
+                        785.2211798120583
+                      ]
+                    },
+                    {
+                      "point": [
+                        9931.226519606163,
+                        785.2211798120583
+                      ]
+                    },
+                    {
+                      "point": [
+                        9931.226519606163,
+                        566.8323505402572
+                      ]
+                    },
+                    {
+                      "point": [
+                        9988.873838879032,
+                        566.8323505402572
+                      ],
+                      "allowedToTop": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "625df5641fd4b60d8a11de4f": {
+          "nodeID": "625df5641fd4b60d8a11de4f",
+          "type": "block",
+          "coords": [
+            9708.578687744539,
+            694.221196888218
+          ],
+          "data": {
+            "name": "not_alone_reply",
+            "color": "standard",
+            "steps": [
+              "625df5641fd4b60d8a11de4c"
+            ]
+          }
+        },
+        "625df5ff1fd4b60d8a11de58": {
+          "nodeID": "625df5ff1fd4b60d8a11de58",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "Would you want to provide me with some examples of movies you would want to watch so I can have a better understanding of what to recommend? You can totally say No but saying yes would improve my ability by a great margin! (you can say or input “yes” or “no”)"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625df6491fd4b60d8a11de6f",
+                "id": "625df5ff1fd4b60d8a11de5a"
+              }
+            ]
+          }
+        },
+        "625df5ff1fd4b60d8a11de5b": {
+          "nodeID": "625df5ff1fd4b60d8a11de5b",
+          "type": "block",
+          "coords": [
+            10153.87361008274,
+            535.8324028505884
+          ],
+          "data": {
+            "name": "movie_comp_decision",
+            "color": "standard",
+            "steps": [
+              "625df5ff1fd4b60d8a11de58",
+              "625df6491fd4b60d8a11de6f"
+            ]
+          }
+        },
+        "625df6491fd4b60d8a11de6f": {
+          "nodeID": "625df6491fd4b60d8a11de6f",
+          "type": "interaction",
+          "data": {
+            "name": "Choice",
+            "choices": [
+              {
+                "intent": "VF.YES",
+                "action": "PATH",
+                "mappings": []
+              },
+              {
+                "intent": "VF.NO",
+                "action": "PATH",
+                "mappings": []
+              }
+            ],
+            "intentScope": "GLOBAL",
+            "noMatch": {
+              "types": [
+                "reprompt"
+              ],
+              "pathName": "No Match",
+              "randomize": false,
+              "reprompts": [
+                {
+                  "voice": "Alexa",
+                  "content": ""
+                }
+              ]
+            },
+            "noReply": null,
+            "chips": null,
+            "buttons": null,
+            "ports": [
+              {
+                "type": "else",
+                "target": null,
+                "id": "625df6491fd4b60d8a11de72"
+              },
+              {
+                "type": "",
+                "target": "625df7991fd4b60d8a11de82",
+                "id": "625df6491fd4b60d8a11de71"
+              },
+              {
+                "type": "",
+                "target": "625df9a31fd4b60d8a11dedc",
+                "id": "625df6591fd4b60d8a11de7d"
+              }
+            ]
+          }
+        },
+        "625df7991fd4b60d8a11de7f": {
+          "nodeID": "625df7991fd4b60d8a11de7f",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "Great, and what would those movies be? (you can type down the name of movies with a comma in between them, such as (Harry potter, mad max, vivarium))"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625df7e01fd4b60d8a11de89",
+                "id": "625df7991fd4b60d8a11de81"
+              }
+            ]
+          }
+        },
+        "625df7991fd4b60d8a11de82": {
+          "nodeID": "625df7991fd4b60d8a11de82",
+          "type": "block",
+          "coords": [
+            10694.919101699037,
+            520.0398830697771
+          ],
+          "data": {
+            "name": "movie_comp",
+            "color": "standard",
+            "steps": [
+              "625df7991fd4b60d8a11de7f",
+              "625df7e01fd4b60d8a11de89"
+            ]
+          }
+        },
+        "625df7e01fd4b60d8a11de89": {
+          "nodeID": "625df7e01fd4b60d8a11de89",
+          "type": "captureV2",
+          "data": {
+            "intentScope": "GLOBAL",
+            "capture": {
+              "type": "query",
+              "variable": "movie_comp"
+            },
+            "noReply": null,
+            "noMatch": null,
+            "chips": null,
+            "ports": [
+              {
+                "type": "next",
+                "target": "625df8061fd4b60d8a11de96",
+                "id": "625df7e01fd4b60d8a11de8b"
+              },
+              {
+                "type": "else",
+                "target": null,
+                "id": "625df7e01fd4b60d8a11de8c"
+              }
+            ]
+          }
+        },
+        "625df8061fd4b60d8a11de93": {
+          "nodeID": "625df8061fd4b60d8a11de93",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "Fantastic! Great selection mate!"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625e056c1fd4b60d8a11df06",
+                "id": "625df8061fd4b60d8a11de95",
+                "data": {
+                  "points": [
+                    {
+                      "point": [
+                        11363.843709873632,
+                        750.3012132062179
+                      ]
+                    },
+                    {
+                      "point": [
+                        11433.608673334633,
+                        750.3012132062179
+                      ]
+                    },
+                    {
+                      "point": [
+                        11433.608673334633,
+                        832.3886952742511
+                      ]
+                    },
+                    {
+                      "point": [
+                        11503.373636795634,
+                        832.3886952742511
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "625df8061fd4b60d8a11de96": {
+          "nodeID": "625df8061fd4b60d8a11de96",
+          "type": "block",
+          "coords": [
+            11198.844051068556,
+            659.3011938642028
+          ],
+          "data": {
+            "name": "movie_comp_confirm",
+            "color": "standard",
+            "steps": [
+              "625df8061fd4b60d8a11de93"
+            ]
+          }
+        },
+        "625df8361fd4b60d8a11de9f": {
+          "nodeID": "625df8361fd4b60d8a11de9f",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "Well, we are all done with the questions, I am now going to generate the recommendations for you….<break strength=\"medium\" />"
+              },
+              {
+                "voice": "Alexa",
+                "content": "in a second…<break time=\"3s\" />"
+              },
+              {
+                "voice": "Alexa",
+                "content": "gotta conjure my magic! <break strength=\"strong\" />"
+              },
+              {
+                "voice": "Alexa",
+                "content": "{{[user_name].user_name}}, click the button below to view your recommendations. After clicking the button you will view your recommendations and will be able to watch trailers for them and get the details of streaming platforms who currently have that title streaming. It’s been a journey old pal!! Hope this set of recommendations will be satisfactory but if not, you can come back and initiate a new set but next time you will have the option to just update the existing info I just received from you or click “refresh” to just view a new set using your current selection of information. Happy streaming!!"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625dfbd01fd4b60d8a11def2",
+                "id": "625df8361fd4b60d8a11dea1",
+                "data": {
+                  "points": [
+                    {
+                      "point": [
+                        12019.385529743486,
+                        666.4435817980408
+                      ],
+                      "reversed": true
+                    },
+                    {
+                      "point": [
+                        11995.385529743486,
+                        666.4435817980408
+                      ]
+                    },
+                    {
+                      "point": [
+                        11995.385529743486,
+                        812.5243048733299
+                      ]
+                    },
+                    {
+                      "point": [
+                        12175.289052197526,
+                        812.5243048733299
+                      ]
+                    },
+                    {
+                      "point": [
+                        12175.289052197526,
+                        840.7776324527103
+                      ],
+                      "toTop": true,
+                      "allowedToTop": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "625df8361fd4b60d8a11dea2": {
+          "nodeID": "625df8361fd4b60d8a11dea2",
+          "type": "block",
+          "coords": [
+            12184.385422370387,
+            553.4436158354945
+          ],
+          "data": {
+            "name": "movie_rec_message",
+            "color": "standard",
+            "steps": [
+              "625df8361fd4b60d8a11de9f"
+            ]
+          }
+        },
+        "625df93a1fd4b60d8a11deb8": {
+          "nodeID": "625df93a1fd4b60d8a11deb8",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "https://silky-foil-polish.glitch.me/movie_info.html"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625df9841fd4b60d8a11ded2",
+                "id": "625df93a1fd4b60d8a11deba",
+                "data": {
+                  "points": [
+                    {
+                      "point": [
+                        12791.278488446162,
+                        824.9776624185369
+                      ]
+                    },
+                    {
+                      "point": [
+                        12870.875904217583,
+                        824.9776624185369
+                      ]
+                    },
+                    {
+                      "point": [
+                        12870.875904217583,
+                        759.318815898139
+                      ]
+                    },
+                    {
+                      "point": [
+                        12950.473319989003,
+                        759.318815898139
+                      ],
+                      "allowedToTop": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "625df93a1fd4b60d8a11debb": {
+          "nodeID": "625df93a1fd4b60d8a11debb",
+          "type": "block",
+          "coords": [
+            12626.278481875666,
+            744.9776781937497
+          ],
+          "data": {
+            "name": "movie_rec_link",
+            "color": "standard",
+            "steps": [
+              "625df93a1fd4b60d8a11deb8"
+            ]
+          }
+        },
+        "625df9841fd4b60d8a11ded0": {
+          "nodeID": "625df9841fd4b60d8a11ded0",
+          "type": "exit",
+          "data": {
+            "ports": []
+          }
+        },
+        "625df9841fd4b60d8a11ded2": {
+          "nodeID": "625df9841fd4b60d8a11ded2",
+          "type": "block",
+          "coords": [
+            13115.473866163973,
+            728.318850613299
+          ],
+          "data": {
+            "name": "New Block 31",
+            "color": "standard",
+            "steps": [
+              "625df9841fd4b60d8a11ded0"
+            ]
+          }
+        },
+        "625df9a31fd4b60d8a11ded9": {
+          "nodeID": "625df9a31fd4b60d8a11ded9",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "No worries at all! I will still be able to suggest you with recommendations regardless!"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625e056c1fd4b60d8a11df06",
+                "id": "625df9a31fd4b60d8a11dedb",
+                "data": {
+                  "points": [
+                    {
+                      "point": [
+                        11359.078976057659,
+                        1065.265499547372
+                      ]
+                    },
+                    {
+                      "point": [
+                        11431.226306426646,
+                        1065.265499547372
+                      ]
+                    },
+                    {
+                      "point": [
+                        11431.226306426646,
+                        832.3886952742511
+                      ]
+                    },
+                    {
+                      "point": [
+                        11503.373636795634,
+                        832.3886952742511
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "625df9a31fd4b60d8a11dedc": {
+          "nodeID": "625df9a31fd4b60d8a11dedc",
+          "type": "block",
+          "coords": [
+            11194.07928811022,
+            952.2655154695487
+          ],
+          "data": {
+            "name": "movie_comp_reject",
+            "color": "standard",
+            "steps": [
+              "625df9a31fd4b60d8a11ded9"
+            ]
+          }
+        },
+        "625dfbd01fd4b60d8a11deef": {
+          "nodeID": "625dfbd01fd4b60d8a11deef",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "in a second…<break strength=\"medium\" />"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625dfbe91fd4b60d8a11defc",
+                "id": "625dfbd01fd4b60d8a11def1",
+                "data": {
+                  "points": [
+                    {
+                      "point": [
+                        12340.28908826071,
+                        921.7776520869356
+                      ]
+                    },
+                    {
+                      "point": [
+                        12364.28908826071,
+                        921.7776520869356
+                      ]
+                    },
+                    {
+                      "point": [
+                        12364.28908826071,
+                        1011.1642221381353
+                      ]
+                    },
+                    {
+                      "point": [
+                        12188.828866725746,
+                        1011.1642221381353
+                      ]
+                    },
+                    {
+                      "point": [
+                        12188.828866725746,
+                        1054.9915726719707
+                      ],
+                      "toTop": true,
+                      "allowedToTop": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "625dfbd01fd4b60d8a11def2": {
+          "nodeID": "625dfbd01fd4b60d8a11def2",
+          "type": "block",
+          "coords": [
+            12175.28931519491,
+            841.7776509502261
+          ],
+          "data": {
+            "name": "Movie_rec_message",
+            "color": "standard",
+            "steps": [
+              "625dfbd01fd4b60d8a11deef"
+            ]
+          }
+        },
+        "625dfbe91fd4b60d8a11def9": {
+          "nodeID": "625dfbe91fd4b60d8a11def9",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "gotta conjure my magic! "
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625df93a1fd4b60d8a11deb8",
+                "id": "625dfbe91fd4b60d8a11defb",
+                "data": {
+                  "points": [
+                    {
+                      "point": [
+                        12353.828592894259,
+                        1135.9915406570847
+                      ]
+                    },
+                    {
+                      "point": [
+                        12407.053341653198,
+                        1135.9915406570847
+                      ]
+                    },
+                    {
+                      "point": [
+                        12407.053341653198,
+                        823.9776581500336
+                      ]
+                    },
+                    {
+                      "point": [
+                        12460.278090412135,
+                        823.9776581500336
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "625dfbe91fd4b60d8a11defc": {
+          "nodeID": "625dfbe91fd4b60d8a11defc",
+          "type": "block",
+          "coords": [
+            12188.828819828459,
+            1055.9915363757168
+          ],
+          "data": {
+            "name": "Movie_rec_message",
+            "color": "standard",
+            "steps": [
+              "625dfbe91fd4b60d8a11def9"
+            ]
+          }
+        },
+        "625e056c1fd4b60d8a11df06": {
+          "nodeID": "625e056c1fd4b60d8a11df06",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "Now before I start processing the information you have just provided, would you want to update any part of what you have mentioned? "
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625e05b71fd4b60d8a11df10",
+                "id": "625e056c1fd4b60d8a11df08"
+              }
+            ]
+          }
+        },
+        "625e056c1fd4b60d8a11df09": {
+          "nodeID": "625e056c1fd4b60d8a11df09",
+          "type": "block",
+          "coords": [
+            11669.37351493458,
+            753.38866278417
+          ],
+          "data": {
+            "name": "update_prompt",
+            "color": "standard",
+            "steps": [
+              "625e056c1fd4b60d8a11df06",
+              "625e05b71fd4b60d8a11df10"
+            ]
+          }
+        },
+        "625e05b71fd4b60d8a11df10": {
+          "nodeID": "625e05b71fd4b60d8a11df10",
+          "type": "interaction",
+          "data": {
+            "name": "Choice",
+            "choices": [
+              {
+                "intent": "VF.NO",
+                "action": "PATH",
+                "mappings": []
+              },
+              {
+                "intent": "VF.YES",
+                "action": "PATH",
+                "mappings": []
+              }
+            ],
+            "intentScope": "GLOBAL",
+            "noMatch": {
+              "types": [
+                "reprompt"
+              ],
+              "pathName": "No Match",
+              "randomize": false,
+              "reprompts": [
+                {
+                  "voice": "Alexa",
+                  "content": ""
+                }
+              ]
+            },
+            "noReply": null,
+            "chips": null,
+            "buttons": null,
+            "ports": [
+              {
+                "type": "else",
+                "target": null,
+                "id": "625e05b71fd4b60d8a11df13"
+              },
+              {
+                "type": "",
+                "target": "625df8361fd4b60d8a11dea2",
+                "id": "625e05b71fd4b60d8a11df12",
+                "data": {
+                  "points": [
+                    {
+                      "point": [
+                        11834.373621636778,
+                        983.3886683797903
+                      ]
+                    },
+                    {
+                      "point": [
+                        11926.879648147173,
+                        983.3886683797903
+                      ]
+                    },
+                    {
+                      "point": [
+                        11926.879648147173,
+                        584.4435814235368
+                      ]
+                    },
+                    {
+                      "point": [
+                        12019.38567465757,
+                        584.4435814235368
+                      ],
+                      "allowedToTop": true
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "",
+                "target": "625e05d71fd4b60d8a11df1e",
+                "id": "625e05c21fd4b60d8a11df19",
+                "data": {
+                  "points": [
+                    {
+                      "point": [
+                        11504.37344065951,
+                        1037.388687109525
+                      ],
+                      "reversed": true
+                    },
+                    {
+                      "point": [
+                        11480.37344065951,
+                        1037.388687109525
+                      ]
+                    },
+                    {
+                      "point": [
+                        11480.37344065951,
+                        1251.9931027201742
+                      ]
+                    },
+                    {
+                      "point": [
+                        11615.21559265857,
+                        1251.9931027201742
+                      ]
+                    },
+                    {
+                      "point": [
+                        11615.21559265857,
+                        1466.5975183308233
+                      ],
+                      "toTop": true,
+                      "allowedToTop": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "625e05d71fd4b60d8a11df1b": {
+          "nodeID": "625e05d71fd4b60d8a11df1b",
+          "type": "speak",
+          "data": {
+            "randomize": true,
+            "canvasVisibility": "preview",
+            "dialogs": [
+              {
+                "voice": "Alexa",
+                "content": "Which section of the information would you want to update?"
+              }
+            ],
+            "ports": [
+              {
+                "type": "next",
+                "target": "625e062f1fd4b60d8a11df29",
+                "id": "625e05d71fd4b60d8a11df1d"
+              }
+            ]
+          }
+        },
+        "625e05d71fd4b60d8a11df1e": {
+          "nodeID": "625e05d71fd4b60d8a11df1e",
+          "type": "block",
+          "coords": [
+            11615.215496400375,
+            1467.5975322040147
+          ],
+          "data": {
+            "name": "update_segment_prompt",
+            "color": "standard",
+            "steps": [
+              "625e05d71fd4b60d8a11df1b",
+              "625e062f1fd4b60d8a11df29"
+            ]
+          }
+        },
+        "625e062f1fd4b60d8a11df29": {
+          "nodeID": "625e062f1fd4b60d8a11df29",
+          "type": "interaction",
+          "data": {
+            "name": "Choice",
+            "choices": [
+              {
+                "intent": "jdfj3ac3",
+                "action": "PATH",
+                "mappings": []
+              },
+              {
+                "intent": "",
+                "action": "PATH",
+                "mappings": []
+              }
+            ],
+            "intentScope": "GLOBAL",
+            "noMatch": {
+              "types": [
+                "reprompt"
+              ],
+              "pathName": "No Match",
+              "randomize": false,
+              "reprompts": [
+                {
+                  "voice": "Alexa",
+                  "content": ""
+                }
+              ]
+            },
+            "noReply": null,
+            "chips": null,
+            "buttons": null,
+            "ports": [
+              {
+                "type": "else",
+                "target": null,
+                "id": "625e062f1fd4b60d8a11df2c"
+              },
+              {
+                "type": "",
+                "target": null,
+                "id": "625e062f1fd4b60d8a11df2b"
+              },
+              {
+                "type": "",
+                "target": null,
+                "id": "625e06701fd4b60d8a11df32"
+              }
+            ]
+          }
+        },
+        "625e069c1fd4b60d8a11df34": {
+          "nodeID": "625e069c1fd4b60d8a11df34",
+          "type": "flow",
+          "data": {
+            "diagramID": null,
+            "variableMap": null,
+            "ports": [
+              {
+                "type": "next",
+                "target": null,
+                "id": "625e069c1fd4b60d8a11df36"
+              }
+            ]
+          }
+        },
+        "625e069c1fd4b60d8a11df37": {
+          "nodeID": "625e069c1fd4b60d8a11df37",
+          "type": "block",
+          "coords": [
+            12103.63756344154,
+            1601.5862678304775
+          ],
+          "data": {
+            "name": "New Block 37",
+            "color": "standard",
+            "steps": [
+              "625e069c1fd4b60d8a11df34"
+            ]
+          }
+        }
+      },
+      "children": []
+    }
+  },
+  "variableStates": []
+}
